@@ -14,16 +14,22 @@
 .calculator {
     border: 1px solid black;
     width: 300px;
-    height: 500px;    
+    height: 450px;    
 }
 
 .display {
     border: 1px solid red;
-    margin: 15px 20px;
-    
-    padding: 5px;
+    padding: 20px;
     display: flex;
     justify-content: flex-end;
-
 }
 
+.basicBtn {
+    padding: 5px;
+}
+
+
+.row1 {
+    display: flex;
+    flex-basis: 100%;
+}
