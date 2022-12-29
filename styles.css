@@ -34,6 +34,8 @@
     border: 2px solid black;
     padding-right: 5px;
     background-color: white;
+    /*Hides extra numbers, but they are still there*/
+    overflow: hidden;     
 
 }
 
