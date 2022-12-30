@@ -42,3 +42,7 @@
 .two-cubes {
     grid-column: span 2;
 }
+
+.three-cubes {
+    grid-column: span 3;
+}
