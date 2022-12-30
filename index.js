@@ -1,46 +1,58 @@
-const buttonsAll = document.querySelectorAll("button")
-let display = document.querySelector(".display")
-operators = ["*", "/", "-", "+"]
+const buttonsAll = Array.from(document.querySelectorAll("button"));
+let display = document.querySelector(".display");
 
 
 
 
-buttonsAll.forEach((e) => {
-    e.addEventListener("click", (e) => {
-        let clicked = e.target.id
+
+buttonsAll.forEach(button => {
+    button.addEventListener("click", (e) => {
+        
+
+
+        let clicked = e.target.innerText
         console.log(clicked)
         let displayContent = display.innerHTML += clicked
+        switch(e.target.id) {
+            case "CLEAR":
+                display.innerText = "";
+                break;
+            case "DEL":
+                display.innerText = display.innerText.slice(0, -1);
+                break;
+            }
+            
         
         if (clicked === "=") {
             if (displayContent.includes("/")) {
-                const splitStuff = displayContent.split(" /")
-                console.log(splitStuff)
+                splitStuff = displayContent.split("/")
+                result = parseFloat(splitStuff[0]) / parseFloat(splitStuff[1])
+                display.innerText = result;
+                console.log(result)
             }
             if (displayContent.includes("-")) {
-                
+                splitStuff = displayContent.split("-")
+                result = parseFloat(splitStuff[0]) - parseFloat(splitStuff[1])
+                display.innerText = parseFloat(result);
+                console.log(result)
             }
             if (displayContent.includes("+")) {
-                
+                splitStuff = displayContent.split("+")
+                result = parseFloat(splitStuff[0]) + parseFloat(splitStuff[1])
+                display.innerText = result;
+                console.log(result)
             }
             if (displayContent.includes("*")) {
-                
+                splitStuff = displayContent.split("*")
+                result = parseFloat(splitStuff[0]) * parseFloat(splitStuff[1])
+                display.innerText = result;
+                console.log(result)
             }
-        }
-
-
-
-        /*
-        if (clicked === "CLEAR") {
-            location.reload();
-        }
-        */
-        
+        } 
+              
     })
 })
 
-const operate = (operator, num1, num2) => {
-
-}
 
 
 
@@ -49,44 +61,6 @@ const operate = (operator, num1, num2) => {
 
 
 
-
-
-
-
-
-
-/*
-function add(num1, num2) {
-    return num1 + num2
-}
-
-
-function subtract(num1, num2) {
-    return num1 - num2
-}
-
-function multiply(num1, num2) {
-    return num1 * num2
-}
-
-function divide(num1, num2) {
-    return num1 / num2
-}
-
-
-
-
-function operators(numbers) {
-    return numbers
-}
-
-
-
-
-console.log(operators(subtract(5,5)))
-
-
-*/
 
 
 
